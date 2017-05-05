@@ -1,2 +1,3 @@
 # wiki
-FreeCodeCamp Challenge: Wikipedia Viewer
+Front-End Project
+Wikipedia Viewer
