@@ -1,47 +1,100 @@
+
+.google-fonts{
+  font-family: 'Aldrich', sans-serif;
+  font-family: 'Squada One', cursive;
+}
+
+body{
+  background-color:  #E4E4E4;
+}
+
+h1,h2{
+  font-family: 'Aldrich', sans-serif;
+}
+
+h3,h4,h5,p{
+  font-family: 'Squada One', cursive;
+}
+
+.title{
+  margin-bottom:  0px;
+}
+
+.name{
+  margin-top:   0px;
+  margin-left:   5px;
+}
+
+.random{
+  margin-left: 5px;
+}
+
+span{
+  position: relative; 
+  float: left;
+}
+
+a{
+  text-decoration:  none;
+  color:  #E34141;
+}
+
+a:hover{
+  text-decoration:  none;
+  color: #4CAAEF;
+}
+
+.box{
+  padding-left: 15px;
+}
+
+.division{
+  display:inline-block;
+}
+
+.floats{
+  float: left;
+}
+
+.nopadLeft{
+  padding-left: 0px;
+}
+
+.nopadRight{
+  padding-right: 0px;
+}
+
+#searches{
+  display: block;
+  width: 1%;
+  height: 34px;
+  border: 0px;
+  border-radius: 5px;
+}
+
+.x-mark{
+  position: absolute;
+  color: black;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  display: block;
+  width: 34px;
+  height: 34px;
+  line-height: 34px;
+  text-align: center;
+}
+
 /* Extra small devices (phones, up to 480px) */
 @media screen and (max-width: 467px)  and (max-height: 700px) {
-  h2{
-    font-size: 7vw;
-    margin-top: 20%;
-  }
-  .box{
-    height: 400px;
-  }
-  .h30{
-    position: relative;
-    margin-top: 0px;
-    margin-bottom: 0px;
-  }
-  #temp{
-    margin-top: -30px;
-  }
+ 
 }/* Extra small devices (phones, up to 480px) */
 @media screen and (max-width: 767px) {
-  h2{
-    font-size: 7vw;
-  }
-  .box{
-    height: 450px;
-  }
-    .h30{
-    position: relative;
-    margin-top: 0px;
-    margin-bottom: 0px;
-  }
-  #temp{
-    margin-top: -30px;
-  }
+  
 }
 /* Small devices (tablets, 768px and up) */
 @media screen and (min-width: 768px) and (max-width: 991px) {
-  h2{
-      font-size: 7vw;
-      margin-top: 10%;
-    }
-  .box{
-    height: 300px;
-  }
-
+  
 }
 /* tablets/desktops and up ----------- */
 /*@media (min-width: 992px) and (max-width: 1199px) {
@@ -51,8 +104,5 @@
 }*/
 /* large desktops and up ----------- */
 @media screen and (min-width: 992px) {
-  h2{
-    font-size: 4vw;
-    margin-top: 10%;
-  }
+ 
 }
