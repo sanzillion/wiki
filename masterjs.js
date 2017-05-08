@@ -4,6 +4,7 @@ $(document).ready(function(){
   console.log("WELCOME FUCKERS!");
   var url = 'https://en.wikipedia.org/w/api.php?action=opensearch&format=json&search=';
   
+  //initialize DOM calls
   var button = $("#search");
   var input = $("#searches");
   var x = $(".x-mark");
@@ -12,10 +13,11 @@ $(document).ready(function(){
 	var col2 = $('#wikis2');
   var rbtn = $(".random");
 
-  //set
+  //set property opacity to 0
   col1.css("opacity", "0");
   col2.css("opacity", "0");
 
+  //button animation
   x.hide();
   input.hide();
   	button.on("click", function(){
@@ -33,6 +35,7 @@ $(document).ready(function(){
       col2.animate({opacity: '0'});
   	});
 
+    //For auto-suggestions and input value
   input.on("keydown", function(e){
   	var val = $(this).val();
   	if(val != ''){
@@ -46,7 +49,7 @@ $(document).ready(function(){
                 generateList(data[1]);
            	 }
    		})
-   		if(e.keyCode == 13)
+   		if(e.keyCode == 13) //keyCode for Enter Key is 13
 	    {
 	        $(this).trigger("enterKey");
 	    }
@@ -54,6 +57,7 @@ $(document).ready(function(){
 
   });
 
+  //process input value upon enter
   	input.bind("enterKey",function(e){
       col1.animate({opacity: '0', marginTop: '50px'},100);
       col2.animate({opacity: '0', marginTop: '50px'},300);
@@ -62,15 +66,16 @@ $(document).ready(function(){
    		$.ajax({
    			 url:api,
    			 dataType: "jsonp",
-           	 method:"GET",
-           	 success:function(data){
-                col1.empty(); //clean columns
-                col2.empty();
-                generateResults(data);
-           	 }
+         method:"GET",
+         success:function(data){
+            col1.empty(); //clean columns
+            col2.empty(); 
+            generateResults(data);
+         }
    		})
 	});
 
+  //generate List with title array
 	function generateList(results){
 		var suggestion = $('#suggestions');
 		for(var x = 0; x < results.length; x++){
@@ -78,6 +83,7 @@ $(document).ready(function(){
             }
 	}
 
+  //process return value from opensearch
 	function generateResults(results){
 
     col1.css("margin-top", "50px");
@@ -94,7 +100,7 @@ $(document).ready(function(){
     }
 
     console.log("Generated");
-
+    //when generated, entrance animation
       col1.animate({
         opacity: '1',
         marginTop: '0px'
@@ -104,28 +110,33 @@ $(document).ready(function(){
         opacity: '1',
         marginTop: '0px'
       },600);
-
-      rbtn.on("click", setLink);
 	}
+
+  rbtn.on("click", setLink);
 
 });
 
   function setLink(){
     console.log("Linking...");
+    //first get one random title from the API
     var random = "https://en.wikipedia.org/w/api.php?action=query&list=random&format=json&rnnamespace=0&rnlimit=1";
+    //then use that title to get results from WIKI API
     var searchRandom = 'https://en.wikipedia.org/w/api.php?action=opensearch&format=json&search=';
     $.ajax({
          url:random,
          dataType: "jsonp",
              method:"GET",
              success:function(data){
+               //get TITLE
                var title = data.query.random[0].title;
+               //combine title to searchRandom URL for opensearch
                var link = searchRandom+title;
                $.ajax({
                 url:link,
                 dataType: "jsonp",
                 method: "GET",
                 success: function(result){
+                  //USE OPEN SEARCH TO GET RESULTS
                   $('.random').attr("href", result[3][0]);
                 }
                });
