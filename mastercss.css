@@ -27,6 +27,7 @@ h3,h4,h5,p{
 
 .random{
   margin-left: 5px;
+  margin-bottom: 5px;
 }
 
 span{
@@ -70,13 +71,14 @@ a:hover{
   height: 34px;
   border: 0px;
   border-radius: 5px;
+  padding-left: 7px;
 }
 
 .x-mark{
   position: absolute;
   color: black;
   top: 0;
-  right: 0;
+  right: 8px;
   z-index: 2;
   display: block;
   width: 34px;
