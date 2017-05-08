@@ -1,11 +1,15 @@
 
 .google-fonts{
   font-family: 'Aldrich', sans-serif;
-  font-family: 'Squada One', cursive;
+  font-family: 'Noto Sans', sans-serif;
 }
 
 body{
   background-color:  #E4E4E4;
+}
+
+.random{
+  font-family: 'Aldrich', sans-serif !important;
 }
 
 h1,h2{
@@ -13,7 +17,11 @@ h1,h2{
 }
 
 h3,h4,h5,p{
-  font-family: 'Squada One', cursive;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+.btn{
+  font-family: 'Noto Sans', sans-serif;
 }
 
 .title{
@@ -27,7 +35,7 @@ h3,h4,h5,p{
 
 .random{
   margin-left: 5px;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 span{
@@ -35,7 +43,7 @@ span{
   float: left;
 }
 
-a{
+#profile{
   text-decoration:  none;
   color:  #E34141;
 }
@@ -72,6 +80,7 @@ a:hover{
   border: 0px;
   border-radius: 5px;
   padding-left: 7px;
+  margin-bottom: 5px;
 }
 
 .x-mark{
@@ -85,6 +94,24 @@ a:hover{
   height: 34px;
   line-height: 34px;
   text-align: center;
+}
+
+.results{ 
+  background-color: #F7F7F7;
+  padding: 10px 20px 10px 20px;
+  text-align: justify;
+  box-shadow: 0px 5px 15px #C5C5C5;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.text-justify{
+  text-align: right;
+}
+
+.link{
+  font-family: 'Aldrich', sans-serif;
+  color: #218FE1;
 }
 
 /* Extra small devices (phones, up to 480px) */
